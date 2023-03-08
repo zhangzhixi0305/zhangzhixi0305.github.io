@@ -6,7 +6,8 @@
 
 * [nodejs下载地址](http://nodejs.cn/download/)
 
-* [Node.js最新最详细安装教程](https://blog.csdn.net/Small_Yogurt/article/details/104968169)
+* [Node.js最新最详细安装教程-Windows](https://blog.csdn.net/Small_Yogurt/article/details/104968169)
+* [Node.js最新最详细安装教程-Linux](https://blog.csdn.net/lh155136/article/details/111194424)
 
 ![image-20211001044346349](images/image-20211001044346349.png)
 
@@ -16,8 +17,12 @@ win+r：cmd进入命令提示符窗口，分别输入以下命令查看node和np
 - npm -v：显示安装的npm版本
 
 ![image-20211001044742251](images/image-20211001044742251.png)
+> Nodejs配置淘宝源
 
-
+```shell
+npm config set registry https://registry.npm.taobao.org;
+npm config get registry;
+```
 
 ## docsify-cli工具安装
 
@@ -29,19 +34,15 @@ npm i docsify-cli -g
 
 ![image-20211001045416111](images/image-20211001045416111.png)
 
-
-
 ## 项目初始化
 
-> 如果想在项目的 `./docs(文件名可以按自己的想法来)` 目录里写文档，直接通过 `init` 初始化项目。
+> 如果想在项目的 `./docs(文件名可以按自己的想法来)` 目录里写文档，直接通过 `init ./docs` 初始化项目。
 
 ``` javascript
-docsify init ./docsify-Guide
+docsify init
 ```
 
-
-
-初始化成功后，可以看到 `./docs` 目录下创建的几个文件
+初始化成功后，可以看到当前目录下创建的几个文件
 
 - `index.html` 入口文件
 - `README.md` 会做为主页内容渲染
@@ -49,19 +50,31 @@ docsify init ./docsify-Guide
 
 直接编辑 `docs/README.md` 就能更新文档内容，当然也可以[添加更多页面](https://docsify.js.org/#/zh-cn/more-pages)。
 
-
-
 ## 本地运行docsify创建的项目
 
-> 通过运行 `docsify serve 项目名称 ` 启动一个本地服务器，可以方便地实时预览效果。默认访问地址 [http://localhost:3000](http://localhost:3000/) 。
+> 启动(端口默认3000)
 
-``` javascript
-docsify serve docsify-Guide
+```shell
+docsify serve --port=80
 ```
 
 ![image-20211010124211458](images/image-20211010124211458.png)
+> Linux下后台启动docsify 
 
-
+在Linux下如果使用下面的命令启动docsify，会发现一旦关闭了xShell，那么就访问不了了，具体问题还不清楚，下面说种可以在后台运行的方法；
+```
+shell nohup docsify serve /usr/local/docsify/zhangzhixi0305.github.io/ --port=80 > /dev/null 2>&1 &
+```
+通过编写shell脚本，将上面代码放到脚本里面，再启动就可以了；    
+1、创建脚本：vim start_docsify.sh
+```shell
+#! bin/bash
+nohup docsify serve /usr/local/docsify/zhangzhixi0305.github.io/ --port=80 > /dev/null 2>&1 &
+```
+2、启动脚本  
+```shell
+bash start_docsify.sh
+```
 
 ## 基础配置文件介绍
 
@@ -75,8 +88,6 @@ docsify serve docsify-Guide
 |     导航栏配置文件     |  _navbar.md   |
 |    主页内容渲染文件    |   README.md   |
 |       浏览器图标       |  favicon.ico  |
-
-
 
 ## 基础配置项（index.html）
 
@@ -157,8 +168,6 @@ docsify serve docsify-Guide
 </html>
 ```
 
-
-
 ## 封面配置文件（_coverpage.md）
 
 > [docsify官网封面配置教程](https://docsify.js.org/#/zh-cn/cover)
@@ -175,8 +184,6 @@ docsify serve docsify-Guide
 </script>
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 ```
-
-
 
 **_coverpage.md**
 
@@ -250,8 +257,6 @@ docsify serve docsify-Guide
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 ```
 
-
-
 **_navbar.md**
 
 ``` markdown
@@ -274,21 +279,15 @@ docsify serve docsify-Guide
 
 ![image-20211016010857082](images/image-20211016010857082.png)
 
-
-
 ## 全文搜索 - Search
 
 [全文搜索 - Search](https://docsify.js.org/#/zh-cn/plugins?id=全文搜索-search)
-
-
 
 ## docsify主题切换
 
 > 注意：切换主题只需要在根目录的index.html切换对应的主题css文件即可
 
 https://docsify.js.org/#/zh-cn/themes
-
-
 
 ## 相关教程
 

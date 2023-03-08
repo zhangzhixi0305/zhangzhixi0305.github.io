@@ -4,31 +4,6 @@
 
 ##### emoji表情网址：https://emojipedia.org/
 
-> Nodejs配置淘宝源.
-
-```shell
-npm config set registry https://registry.npm.taobao.org;
-npm config get registry;
-```
-
-> docsify-cli工具安装
-
-``` javascript
-npm i docsify-cli -g
-```
-
-> 项目初始化
-
-``` javascript
-docsify init
-```
-
-> 启动(端口默认3000)
-
-```shell
-docsify serve --port=80
-```
-
 🍇 Grapes        
 🍈 Melon 🍉 Watermelon    
 🍊 Tangerine 🍋 Lemon 🍌 Banana    
