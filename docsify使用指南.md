@@ -62,8 +62,8 @@ docsify serve --port=80
 > Linux下后台启动docsify 
 
 在Linux下如果使用下面的命令启动docsify，会发现一旦关闭了xShell，那么就访问不了了，具体问题还不清楚，下面说种可以在后台运行的方法；
-```
-shell nohup docsify serve /usr/local/docsify/zhangzhixi0305.github.io/ --port=80 > /dev/null 2>&1 &
+```shell
+nohup docsify serve /usr/local/docsify/zhangzhixi0305.github.io/ --port=80 > /dev/null 2>&1 &
 ```
 通过编写shell脚本，将上面代码放到脚本里面，再启动就可以了；    
 1、创建脚本：vim start_docsify.sh
