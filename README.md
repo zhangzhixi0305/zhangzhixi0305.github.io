@@ -4,7 +4,7 @@
 
 ##### emoji表情网址：https://emojipedia.org/
 
-> Nodejs配置淘宝源
+> Nodejs配置淘宝源.
 
 ```shell
 npm config set registry https://registry.npm.taobao.org;
