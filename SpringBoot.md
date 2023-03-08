@@ -2,7 +2,7 @@
 
 # 第一章  JavaConfig
 
-1. 为什么要使用 Spring Boot
+1. 为什么要使用 Spring Boot.
 
    因为Spring， SpringMVC 需要使用的大量的配置文件 （xml文件）
 
