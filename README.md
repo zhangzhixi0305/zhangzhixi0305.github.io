@@ -2,8 +2,6 @@
 
 # **首页**
 
-##### docsify使用指南：使用Typora+docsify打造最强、最快捷、最轻量级的个人&团队文档
-
 ##### emoji表情网址：https://emojipedia.org/
 
 > Nodejs配置淘宝源
