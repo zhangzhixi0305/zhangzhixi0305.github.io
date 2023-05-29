@@ -9,3 +9,5 @@
   * [🫒Confluence安装教程](Confluence.md)
 * SpringBoot
   * [🍇SpringBoot2](SpringBoot.md)
+* MQ
+  * [🍔RabbitMQ](RibbitMQ 实战教程.md)
