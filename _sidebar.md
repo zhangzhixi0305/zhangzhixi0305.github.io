@@ -10,4 +10,4 @@
 * SpringBoot
   * [🍇SpringBoot2](SpringBoot.md)
 * MQ
-  * [🍔RabbitMQ](RibbitMQ 实战教程.md)
+  * [🍔RibbitMQ实战教程](RibbitMQ实战教程.md)
