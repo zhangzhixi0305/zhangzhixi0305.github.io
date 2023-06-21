@@ -1,6 +1,7 @@
 [//]: # (文档首页)
 
 # **首页**
+#### docsify安装手册
 
 ##### emoji表情网址：https://emojipedia.org/
 
