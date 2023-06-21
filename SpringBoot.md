@@ -16,23 +16,15 @@
 
 3. SpringBoot开发效率高，使用方便多了
 
-
-
-
-
 ## 1.1 JavaConfig
 
-JavaConfig: 使用java类作为xml配置文件的替代， 是配置spring容器的纯java的方式。 在这个java类这可以创建java对象，把对象放入spring容器中（注入到容器）， 
-
-
+JavaConfig: 使用java类作为xml配置文件的替代， 是配置spring容器的纯java的方式。 在这个java类这可以创建java对象，把对象放入spring容器中（注入到容器），
 
 使用两个注解：
 
 1）@Configuration ： 放在一个类的上面，表示这个类是作为配置文件使用的。
 
 2）@Bean：声明对象，把对象注入到容器中。
-
-
 
 ```java
 例子：
@@ -88,17 +80,13 @@ public class SpringConfig {
 
 ```
 
-
-
 ## 1.2 @ImporResource
 
-@ImportResource 作用导入其他的xml配置文件， 等于 在xml 
+@ImportResource 作用导入其他的xml配置文件， 等于 在xml
 
 ```xml
 <import resources="其他配置文件"/>
 ```
-
-
 
 例如：
 
@@ -109,27 +97,17 @@ public class SpringConfig {
 }
 ```
 
-
-
-
-
-
-
 ## 1.3 @PropertyResource
 
 @PropertyResource: 读取properties属性配置文件。 使用属性配置文件可以实现外部化配置 ，
 
 在程序代码之外提供数据。
 
-
-
 步骤：
 
 1. 在resources目录下，创建properties文件， 使用k=v的格式提供数据
 2. 在PropertyResource 指定properties文件的位置
 3. 使用@Value（value="${key}"）
-
-
 
 ```java
 @Configuration
@@ -139,8 +117,6 @@ public class SpringConfig {
 public class SpringConfig {
 }
 ```
-
-
 
 # 第二 章 Spring Boot
 
@@ -152,73 +128,52 @@ SpringBoot是Spring中的一个成员， 可以简化Spring，SpringMVC的使用
 
 - Create stand-alone Spring applications
 
-   创建spring应用
+  创建spring应用
 
-  
 
 - Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)
 
-  内嵌的tomcat， jetty ， Undertow 
+  内嵌的tomcat， jetty ， Undertow
 
-  
 
 - Provide opinionated 'starter' dependencies to simplify your build configuration
 
-  提供了starter起步依赖，简化应用的配置。   
+  提供了starter起步依赖，简化应用的配置。
 
   比如使用MyBatis框架 ， 需要在Spring项目中，配置MyBatis的对象 SqlSessionFactory ， Dao的代理对象
 
   在SpringBoot项目中，在pom.xml里面, 加入一个 mybatis-spring-boot-starter依赖
 
-  
 
 - Automatically configure Spring and 3rd party libraries whenever possible
 
   尽可能去配置spring和第三方库。叫做自动配置（就是把spring中的，第三方库中的对象都创建好，放到容器中， 开发人员可以直接使用）
 
-  
 
 - Provide production-ready features such as metrics, health checks, and externalized configuration
 
-   提供了健康检查， 统计，外部化配置
+  提供了健康检查， 统计，外部化配置
 
-  
 
 - Absolutely no code generation and no requirement for XML configuration
 
   不用生成代码， 不用使用xml，做配置
 
-
-
 ## 2.2 创建Spring Boot项目
 
 ### 2.2.1 第一种方式， 使用Spring提供的初始化器， 就是向导创建SpringBoot应用
 
-
-
 使用的地址： https://start.spring.io
-
-
 
 SpringBoot项目的结构：
 
-![image-20210115152427829](images/image-20210115152427829.png)	
-
-
-
-
+![image-20210115152427829](images/image-20210115152427829.png)
 
 ### 2.2.1  使用国内的地址
 
-
-
 https://start.springboot.io
 
-![image-20210115155556662](images/image-20210115155556662.png)	
-
-
-
-
+![image-20210115155556662](images/image-20210115155556662.png)
 
 ## 2.3  注解的使用
 
@@ -249,8 +204,6 @@ public @interface SpringBootConfiguration {
 
 启用自动配置， 把java对象配置好，注入到spring容器中。例如可以把mybatis的对象创建好，放入到容器中
 
-
-
 3.@ComponentScan
 
 ```java
@@ -259,17 +212,13 @@ public @interface SpringBootConfiguration {
     
 ```
 
-
-
 ## 2.4 SpringBoot的配置文件
 
 配置文件名称： application
 
-扩展名有： properties( k=v) ;  yml ( k: v)
+扩展名有： properties( k=v) ; yml ( k: v)
 
-使用application.properties,   application.yml
-
-
+使用application.properties, application.yml
 
 例1：application.properties设置 端口和上下文
 
@@ -281,8 +230,6 @@ server.servlet.context-path=/myboot
 
 ```
 
-
-
 例2： application.yml
 
 ```yaml
@@ -292,29 +239,19 @@ server:
     context-path: /myboot2
 ```
 
-
-
 ## 2.5 多环境配置
 
 有开发环境， 测试环境， 上线的环境。
 
 每个环境有不同的配置信息， 例如端口， 上下文件， 数据库url，用户名，密码等等
 
-
-
 使用多环境配置文件，可以方便的切换不同的配置。
 
 使用方式： 创建多个配置文件， 名称规则： application-环境名称.properties(yml)
 
-
-
 创建开发环境的配置文件： application-dev.properties(  application-dev.yml )
 
 创建测试者使用的配置： application-test.properties
-
-
-
-
 
 ## 2.6 @ConfigurationProperties
 
@@ -371,8 +308,6 @@ public class SchoolInfo {
 
 ```
 
-
-
 application.properties
 
 ```pro
@@ -389,15 +324,9 @@ school.address=北京的大兴区
 site=www.bjpowernode.com
 ```
 
-
-
-
-
 ## 2.7  使用jsp
 
 SpringBoot不推荐使用jsp ，而是使用模板技术代替jsp
-
-
 
 使用jsp需要配置：
 
@@ -409,8 +338,6 @@ SpringBoot不推荐使用jsp ，而是使用模板技术代替jsp
     <artifactId>tomcat-embed-jasper</artifactId>
 </dependency>
 ```
-
-
 
 2) 如果需要使用servlet， jsp，jstl的功能
 
@@ -433,29 +360,17 @@ SpringBoot不推荐使用jsp ，而是使用模板技术代替jsp
 
 ```
 
-
-
 3) 创建一个存放jsp的目录，一般叫做webapp
 
-​    index.jsp
-
-
+​ index.jsp
 
 4) 需要在pom.xml指定jsp文件编译后的存放目录。
 
-  META-INF/resources
-
-
+META-INF/resources
 
 5）创建Controller， 访问jsp
 
-
-
 6）在application.propertis文件中配置视图解析器
-
-
-
-
 
 ## 2.8 使用容器
 
@@ -473,15 +388,11 @@ ConfigurableApplicationContext : 接口，是ApplicationContext的子接口
 public interface ConfigurableApplicationContext extends ApplicationContext
 ```
 
-
-
-## 2.9 ComnandLineRunner 接口 ，  ApplcationRunner接口
+## 2.9 ComnandLineRunner 接口 ， ApplcationRunner接口
 
 这两个接口都 有一个run方法。 执行时间在容器对象创建好后， 自动执行run（）方法。
 
 可以完成自定义的在容器对象创建好的一些操作。
-
-
 
 ```java
 @FunctionalInterface
@@ -496,10 +407,6 @@ public interface ApplicationRunner {
 
 ```
 
-
-
-
-
 # 第三章 Web组件
 
 讲三个内容： 拦截器， Servlet ，Filter
@@ -508,26 +415,27 @@ public interface ApplicationRunner {
 
 拦截器是SpringMVC中一种对象，能拦截器对Controller的请求。
 
-拦截器框架中有系统的拦截器， 还可以自定义拦截器。  实现对请求预先处理。
-
-
+拦截器框架中有系统的拦截器， 还可以自定义拦截器。 实现对请求预先处理。
 
 实现自定义拦截器：
 
 1. 创建类实现SpringMVC框架的HandlerInterceptor接口
 
    ```java
+
 public interface HandlerInterceptor {
-    default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        return true;
-    }
+default boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+return true;
+}
 
     default void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
     }
 
     default void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
     }
+
 }
+
    ```
 
 
@@ -542,8 +450,6 @@ public interface HandlerInterceptor {
     </mvc:interceptor>
 </mvc:interceptors>
 ```
-
-
 
 SpringBoot中注册拦截器：
 
@@ -571,8 +477,6 @@ public class MyAppConfig implements WebMvcConfigurer {
 }
 ```
 
-
-
 ## 3.2  Servlet
 
 在SpringBoot框架中使用Servlet对象。
@@ -582,11 +486,7 @@ public class MyAppConfig implements WebMvcConfigurer {
 1. 创建Servlet类。 创建类继承HttpServlet
 2. 注册Servlet ，让框架能找到Servlet
 
-
-
-
-
- 例子：
+例子：
 
 1.创建自定义Servlet
 
@@ -610,8 +510,6 @@ public class MyServlet extends HttpServlet {
     }
 }
 ```
-
-
 
 2. 注册Servlet
 
@@ -640,8 +538,6 @@ public class WebApplictionConfig {
 }
 ```
 
-
-
 ## 3.3 过滤器Filter
 
 Filter是Servlet规范中的过滤器，可以处理请求， 对请求的参数， 属性进行调整。 常常在过滤器中处理字符编码
@@ -650,8 +546,6 @@ Filter是Servlet规范中的过滤器，可以处理请求， 对请求的参数
 
 1. 创建自定义过滤器类
 2. 注册Filter过滤器对象
-
-
 
 例子：
 
@@ -665,8 +559,6 @@ public class MyFilter implements Filter {
     }
 }
 ```
-
-
 
 注册Filter
 
@@ -684,15 +576,11 @@ public class WebApplicationConfig {
 }
 ```
 
-
-
 ## 3.4 字符集过滤器
 
 CharacterEncodingFilter : 解决post请求中乱码的问题
 
-在SpringMVC框架， 在web.xml 注册过滤器。 配置他的属性。 
-
-
+在SpringMVC框架， 在web.xml 注册过滤器。 配置他的属性。
 
 第一种方式：
 
@@ -743,8 +631,6 @@ CharacterEncodingFilter : 解决post请求中乱码的问题
 server.servlet.encoding.enabled=false
 ```
 
-
-
 第二种方式
 
 修改application.properties文件
@@ -761,13 +647,9 @@ server.servlet.encoding.charset=utf-8
 server.servlet.encoding.force=true
 ```
 
-
-
 # 第四章 ORM 操作 MySQL
 
-
-
-使用MyBatis框架操作数据，  在SpringBoot框架集成MyBatis
+使用MyBatis框架操作数据， 在SpringBoot框架集成MyBatis
 
 使用步骤：
 
@@ -777,7 +659,7 @@ server.servlet.encoding.force=true
 
 3. 创建实体类Student
 
-4. 创建Dao接口 StudentDao , 创建一个查询学生的方法 
+4. 创建Dao接口 StudentDao , 创建一个查询学生的方法
 
 5. 创建Dao接口对应的Mapper文件， xml文件， 写sql语句
 
@@ -788,8 +670,6 @@ server.servlet.encoding.force=true
 8. 写application.properties文件
 
    配置数据库的连接信息。
-
-
 
 ### 第一种方式 ： @Mapper
 
@@ -807,13 +687,7 @@ public interface StudentDao {
 }
 ```
 
-
-
-
-
-### 第二种方式  @MapperScan
-
-
+### 第二种方式 @MapperScan
 
 ```java
 /**
@@ -826,13 +700,9 @@ public class Application {
 }
 ```
 
-
-
 ### 第三种方式： Mapper文件和Dao接口分开管理
 
-
-
- 现在把Mapper文件放在resources目录下
+现在把Mapper文件放在resources目录下
 
 1）在resources目录中创建子目录 （自定义的） ， 例如mapper
 
@@ -861,39 +731,31 @@ mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
 </resources>
 ```
 
-
-
-
-
 ### 第四个  事务
 
 Spring框架中的事务：
 
 1） 管理事务的对象： 事务管理器（接口， 接口有很多的实现类）
 
-​      例如：使用Jdbc或mybatis访问数据库，使用的事务管理器：DataSourceTransactionManager
+​ 例如：使用Jdbc或mybatis访问数据库，使用的事务管理器：DataSourceTransactionManager
 
-2 ) 声明式事务：  在xml配置文件或者使用注解说明事务控制的内容
+2 ) 声明式事务： 在xml配置文件或者使用注解说明事务控制的内容
 
-​     控制事务： 隔离级别，传播行为， 超时时间
+​ 控制事务： 隔离级别，传播行为， 超时时间
 
 3）事务处理方式：
 
-​      1） Spring框架中的@Transactional
+​ 1） Spring框架中的@Transactional
 
-​      2)    aspectj框架可以在xml配置文件中，声明事务控制的内容
+​ 2)    aspectj框架可以在xml配置文件中，声明事务控制的内容
 
-
-
-​    
+​
 
 SpringBoot中使用事务： 上面的两种方式都可以。
 
-1）在业务方法的上面加入@Transactional ,  加入注解后，方法有事务功能了。
+1）在业务方法的上面加入@Transactional , 加入注解后，方法有事务功能了。
 
 2）明确的在 主启动类的上面 ，加入@EnableTransactionManager
-
-
 
 例子：
 
@@ -917,27 +779,22 @@ public int addStudent(Student student) {
 }
 ```
 
-
-
-
-
 # 第五章 接口架构风格 —RESTful
 
+接口： API（Application Programming
+Interface，应用程序接口）是一些预先定义的接口（如函数、HTTP接口），或指[软件系统](https://baike.baidu.com/item/软件系统/224122)
+不同组成部分衔接的约定。 用来提供[应用程序](https://baike.baidu.com/item/应用程序)
+与开发人员基于某[软件](https://baike.baidu.com/item/软件)
+或硬件得以访问的一组[例程](https://baike.baidu.com/item/例程/2390628)
+，而又无需访问源码，或理解内部[工作机制](https://baike.baidu.com/item/工作机制/9905789)的细节。
 
-
-接口： API（Application Programming Interface，应用程序接口）是一些预先定义的接口（如函数、HTTP接口），或指[软件系统](https://baike.baidu.com/item/软件系统/224122)不同组成部分衔接的约定。 用来提供[应用程序](https://baike.baidu.com/item/应用程序)与开发人员基于某[软件](https://baike.baidu.com/item/软件)或硬件得以访问的一组[例程](https://baike.baidu.com/item/例程/2390628)，而又无需访问源码，或理解内部[工作机制](https://baike.baidu.com/item/工作机制/9905789)的细节。
-
-
-
-接口（API）： 可以指访问servlet， controller的url，   调用其他程序的 函数
-
-
+接口（API）： 可以指访问servlet， controller的url， 调用其他程序的 函数
 
 架构风格： api组织方式（样子）
 
-   就是一个传统的：    http://localhost:9002/mytrans/addStudent?name=lisi&age=26 
+就是一个传统的：    http://localhost:9002/mytrans/addStudent?name=lisi&age=26
 
-​                                      在地址上提供了 访问的资源名称addStudent, 在其后使用了get方式传递参数。
+​ 在地址上提供了 访问的资源名称addStudent, 在其后使用了get方式传递参数。
 
 ### 5.1  REST
 
@@ -945,75 +802,67 @@ RESTful架构风格
 
 1)REST :  （英文： Representational State Transfer , 中文： 表现层状态转移)。
 
-   REST：是一种接口的架构风格和设计的理念，不是标准。
+REST：是一种接口的架构风格和设计的理念，不是标准。
 
-   优点： 更简洁，更有层次
+优点： 更简洁，更有层次
 
+表现层状态转移:
 
+​ 表现层就是视图层， 显示资源的， 通过视图页面，jsp等等显示操作资源的结果。
 
-   表现层状态转移: 
+​ 状态： 资源变化
 
-​         表现层就是视图层， 显示资源的， 通过视图页面，jsp等等显示操作资源的结果。
+​ 转移： 资源可以变化的。 资源能创建，new状态， 资源创建后可以查询资源， 能看到资源的内容，
 
-​          状态： 资源变化
-
-​         转移： 资源可以变化的。 资源能创建，new状态，  资源创建后可以查询资源， 能看到资源的内容，
-
-这个资源内容 ，可以被修改， 修改后资源 和之前的不一样。  
-
-
-
-
+这个资源内容 ，可以被修改， 修改后资源 和之前的不一样。
 
 2）REST中的要素：
 
-   用REST表示资源和对资源的操作。  在互联网中，表示一个资源或者一个操作。 
+用REST表示资源和对资源的操作。 在互联网中，表示一个资源或者一个操作。
 
-   资源使用url表示的， 在互联网， 使用的图片，视频， 文本，网页等等都是资源。
+资源使用url表示的， 在互联网， 使用的图片，视频， 文本，网页等等都是资源。
 
-   资源是用名词表示。
+资源是用名词表示。
 
+对资源：
 
+​ 查询资源： 看，通过url找到资源。
 
-  对资源： 
+​ 创建资源： 添加资源
 
-​        查询资源： 看，通过url找到资源。 
+​ 更新资源：更新资源 ，编辑
 
-​        创建资源： 添加资源
+​ 删除资源： 去除
 
-​        更新资源：更新资源 ，编辑
+​
 
-​        删除资源： 去除
+资源使用url表示，通过名词表示资源。
 
-​       
-
- 资源使用url表示，通过名词表示资源。
-
-​     在url中，使用名词表示资源， 以及访问资源的信息,  在url中，使用“ / " 分隔对资源的信息
+​ 在url中，使用名词表示资源， 以及访问资源的信息, 在url中，使用“ / " 分隔对资源的信息
 
 ​     http://localhost:8080/myboot/student/1001
 
- 使用http中的动作（请求方式）， 表示对资源的操作（CURD）
+使用http中的动作（请求方式）， 表示对资源的操作（CURD）
 
-   GET:  查询资源  --  sql select
+GET:  查询资源 -- sql select
 
-​                 处理单个资源： 用他的单数方式
+​ 处理单个资源： 用他的单数方式
 
 ​                  http://localhost:8080/myboot/student/1001
 
 ​                 http://localhost:8080/myboot/student/1001/1
 
-​                处理多个资源：使用复数形式
+​ 处理多个资源：使用复数形式
 
 ​                  http://localhost:8080/myboot/students/1001/1002
 
-​                
+​
 
-   POST: 创建资源  -- sql insert
+POST: 创建资源 -- sql insert
 
 ​                http://localhost:8080/myboot/student
 
-​                在post请求中传递数据
+​ 在post请求中传递数据
 
 ```html
 <form action="http://localhost:8080/myboot/student" method="post">
@@ -1022,8 +871,7 @@ RESTful架构风格
   </form>
 ```
 
-
-   PUT： 更新资源  --  sql  update
+PUT： 更新资源 -- sql update
 
    ```xml
 <form action="http://localhost:8080/myboot/student/1" method="post">
@@ -1033,94 +881,67 @@ RESTful架构风格
   </form>
    ```
 
-
-
-   DELETE: 删除资源  -- sql delete
+DELETE: 删除资源 -- sql delete
 
     ```xml
+
 <a href="http://localhost:8080/myboot/student/1">删除1的数据</a>
-    ```
+```
 
+需要的分页， 排序等参数，依然放在 url的后面， 例如
 
+http://localhost:8080/myboot/students?page=1&pageSize=20
 
- 需要的分页，  排序等参数，依然放在  url的后面， 例如 
+`
 
- http://localhost:8080/myboot/students?page=1&pageSize=20
+3） 一句话说明REST：
 
-   `
-
-  
-
-3） 一句话说明REST： 
-
-​    使用url表示资源 ，使用http动作操作资源。
-
-
+​ 使用url表示资源 ，使用http动作操作资源。
 
 4) 注解
 
-  @PathVariable :  从url中获取数据
+@PathVariable :  从url中获取数据
 
-  @GetMapping:    支持的get请求方式，  等同于 @RequestMapping( method=RequestMethod.GET)
+@GetMapping:    支持的get请求方式， 等同于 @RequestMapping( method=RequestMethod.GET)
 
-  @PostMapping:  支持post请求方式 ，等同于 @RequestMapping( method=RequestMethod.POST)
+@PostMapping:  支持post请求方式 ，等同于 @RequestMapping( method=RequestMethod.POST)
 
-  @PutMapping:  支持put请求方式，  等同于 @RequestMapping( method=RequestMethod.PUT)
+@PutMapping:  支持put请求方式， 等同于 @RequestMapping( method=RequestMethod.PUT)
 
-   @DeleteMapping: 支持delete请求方式，  等同于 @RequestMapping( method=RequestMethod.DELETE)
+@DeleteMapping: 支持delete请求方式， 等同于 @RequestMapping( method=RequestMethod.DELETE)
 
-  
+@RestController:  符合注解， 是@Controller 和@ResponseBody组合。
 
-  @RestController:  符合注解， 是@Controller 和@ResponseBody组合。
-
-​               在类的上面使用@RestController ， 表示当前类者的所有方法都加入了 @ResponseBody
-
-
+​ 在类的上面使用@RestController ， 表示当前类者的所有方法都加入了 @ResponseBody
 
 5) Postman : 测试工具
 
    使用Postman : 可以测试 get ，post ， put ，delete 等请求
 
-
-
-
-
 ### 5.2  在页面中或者ajax中，支持put，delete请求
 
 在SpringMVC中 有一个过滤器， 支持post请求转为put ,delete
-
-
 
 过滤器： org.springframework.web.filter.HiddenHttpMethodFilter
 
 作用： 把请求中的post请求转为 put ， delete
 
-
-
 实现步骤：
 
 1. application.properties(yml) : 开启使用 HiddenHttpMethodFilter 过滤器
-2. 在请求页面中，包含 _method参数， 他的值是 put， delete  ，  发起这个请求使用的post方式
-
-
+2. 在请求页面中，包含 _method参数， 他的值是 put， delete ， 发起这个请求使用的post方式
 
 # 第六章 Redis
 
-Redis ： 一个NoSQL数据库，  常用作 缓存使用 （cache）
+Redis ： 一个NoSQL数据库， 常用作 缓存使用 （cache）
 
-Redis的数据类型： string  ,  hash  ,set  ,zset , list
-
-
+Redis的数据类型： string , hash ,set ,zset , list
 
 Redis是一个中间件： 是一个独立的服务器。
 
-java中著名的客户端： Jedis ，  lettuce ， Redisson
+java中著名的客户端： Jedis ， lettuce ， Redisson
 
-
-
-Spring,SpringBoot中有 一个RedisTemplate（StringRedisTemplate） ，处理和redis交互  
-
-
+Spring,SpringBoot中有 一个RedisTemplate（StringRedisTemplate） ，处理和redis交互
 
 ## 6.1  配置Windows版本的redis
 
@@ -1130,17 +951,11 @@ redis-server.exe：服务端， 启动后，不要关闭
 
 redis-cli.exe：客户端， 访问redis中的数据
 
-
-
 redisclient-win32.x86_64.2.0.jar : Redis图形界面客户端
 
-执行方式： 在这个文件所在的目录，  执行 java -jar redisclient-win32.x86_64.2.0.jar
+执行方式： 在这个文件所在的目录， 执行 java -jar redisclient-win32.x86_64.2.0.jar
 
-
-
-
-
-RedisTemplate 使用的  lettuce 客户端库
+RedisTemplate 使用的 lettuce 客户端库
 
 ```xml
 <!--redis起步依赖： 直接在项目中使用RedisTemplate(StringRedisTemplate)-->
@@ -1155,31 +970,21 @@ data-redis使用的   lettuce 客户端库
 
 ```
 
-
-
-
-
-## 6.2 对比 StringRedisTemplate 和 RedisTemplate 
+## 6.2 对比 StringRedisTemplate 和 RedisTemplate
 
 StringRedisTemplate ： 把k，v 都是作为String处理， 使用的是String的序列化 ， 可读性好
 
 RedisTemplate ： 把k，v 经过了序列化存到redis。 k，v 是序列化的内容， 不能直接识别.
 
-​                                 默认使用的jdk序列化， 可以修改为前提的序列化
+​ 默认使用的jdk序列化， 可以修改为前提的序列化
 
-
-
- 序列化：把对象转化为可传输的字节序列过程称为序列化。
+序列化：把对象转化为可传输的字节序列过程称为序列化。
 
 反序列化：把字节序列还原为对象的过程称为反序列化。
-
-
 
 为什么需要序列化
 
 序列化最终的目的是为了对象可以跨平台存储，和进行网络传输。而我们进行跨平台存储和网络传输的方式就是IO，而我们的IO支持的数据格式就是字节数组。我们必须在把对象转成字节数组的时候就制定一种规则（序列化），那么我们从IO流里面读出数据的时候再以这种规则把对象还原回来（反序列化）。
-
-
 
 什么情况下需要序列化
 
@@ -1187,27 +992,18 @@ RedisTemplate ： 把k，v 经过了序列化存到redis。 k，v 是序列化�
 
 本质上存储和网络传输 都需要经过 把一个对象状态保存成一种跨平台识别的字节格式，然后其他的平台才可以通过字节信息解析还原对象信息。
 
-
-
 序列化的方式
 
 序列化只是一种拆装组装对象的规则，那么这种规则肯定也可能有多种多样，比如现在常见的序列化方式有：
 
 JDK（不支持跨语言）、JSON、XML、Hessian、Kryo（不支持跨语言）、Thrift、Protofbuff、
 
-
-
-Student( name=zs, age=20)   ----  { "name":"zs", "age":20 }
-
-
+Student( name=zs, age=20)   ---- { "name":"zs", "age":20 }
 
 java的序列化： 把java对象转为byte[], 二进制数据
 
-json序列化：json序列化功能将对象转换为 JSON 格式或从 JSON 格式转换对象。例如把一个Student对象转换为JSON字符串{"name":"李四", "age":29} )，反序列化(将JSON字符串 {"name":"李四", "age":29} 转换为Student对象)
-
-
-
-
+json序列化：json序列化功能将对象转换为 JSON 格式或从 JSON 格式转换对象。例如把一个Student对象转换为JSON字符串{"name":"
+李四", "age":29} )，反序列化(将JSON字符串 {"name":"李四", "age":29} 转换为Student对象)
 
 设置key或者value的序列化方式
 
@@ -1222,19 +1018,11 @@ redisTemplate.setValueSerializer( new StringRedisSerializer());
 redisTemplate.opsForValue().set(k,v);
 ```
 
-
-
-
-
 # 第七章 SpringBoot集成Dubbo
 
 ## 7.1  看 SpringBoot继承Dubbo的文档
 
-
-
- https://github.com/apache/dubbo-spring-boot-project/blob/master/README_CN.md
-
-
+https://github.com/apache/dubbo-spring-boot-project/blob/master/README_CN.md
 
 ## 7.2  公共项目
 
@@ -1255,8 +1043,6 @@ public interface StudentService {
 }
 
 ```
-
-
 
 ## 7.3  提供者
 
@@ -1299,8 +1085,6 @@ public interface StudentService {
 </dependencies>
 ```
 
-
-
 2）实现接口
 
 ```java
@@ -1328,8 +1112,6 @@ public class StudentServiceImpl implements StudentService {
 }
 ```
 
-
-
 3）application.properties
 
 ```properties
@@ -1347,8 +1129,6 @@ dubbo.scan.base-packages=com.bjpowernode.service
 dubbo.registry.address=zookeeper://localhost:2181
 ```
 
-
-
 4)在启动类的上面
 
 ```java
@@ -1361,8 +1141,6 @@ public class ProviderApplication {
    }
 }
 ```
-
-
 
 ## 7.4消费者
 
@@ -1405,7 +1183,7 @@ public class ProviderApplication {
 </dependencies>
 ```
 
-2)  创建了Controller 或者 Service都可以
+2) 创建了Controller 或者 Service都可以
 
 ```java
 @RestController
@@ -1430,8 +1208,6 @@ public class DubboController {
 }
 ```
 
-
-
 3）application.properties
 
 ```properties
@@ -1441,79 +1217,59 @@ spring.application.name=consumer-application
 dubbo.registry.address=zookeeper://localhost:2181
 ```
 
-
-
-
-
 ## 7.5 练习
 
 使用的技术： SpringBoot ,Dubbo, Redis, MyBatis
 
-
-
 Student表：
 
-![image-20210119150418295](images/image-20210119150418295.png)	
+![image-20210119150418295](images/image-20210119150418295.png)
 
 CREATE TABLE `student` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `phone` varchar(11) COLLATE utf8_bin DEFAULT NULL,
-  `age` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+`phone` varchar(11) COLLATE utf8_bin DEFAULT NULL,
+`age` int(11) DEFAULT NULL,
+PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 1) 注册学生
 
-​     phone必须唯一， 如果已经存在了手机号， 注册失败的。 
+​ phone必须唯一， 如果已经存在了手机号， 注册失败的。
 
-​                 int addStudent(Student student);
+​ int addStudent(Student student);
 
-​                返回值：int
+​ 返回值：int
 
-​                 1： 注册成功
+​ 1： 注册成功
 
-​                 2 ： 手机号已经存在  
+​ 2 ： 手机号已经存在
 
-​                                    
+​
 
-​      name至少两个字符，
+​ name至少两个字符，
 
-​      age 必须 大于 0 
+​ age 必须 大于 0
 
-2） 查询学生，根据id查询，此学生。 
+2） 查询学生，根据id查询，此学生。
 
-​        先到redis查询学生， 如果redis没有此学生，从数据库查询， 把查询到的学生放入到redis。
+​ 先到redis查询学生， 如果redis没有此学生，从数据库查询， 把查询到的学生放入到redis。
 
-​      后面再次查询这个学生应该从redis就能获取到。
+​ 后面再次查询这个学生应该从redis就能获取到。
 
+​ Student queryStudent(Integer id);
 
+3) 使用Dubbo框架， addStudent, queryStudent 是有服务提供者实现的。
 
-​        Student  queryStudent(Integer id);
-
-
-
-3) 使用Dubbo框架，    addStudent, queryStudent 是有服务提供者实现的。
-
-​    消费者可以是一个Controller ， 调用提供者的两个方法。  实现注册和查询。
-
-
+​ 消费者可以是一个Controller ， 调用提供者的两个方法。 实现注册和查询。
 
 4）页面使用html和ajax，jquery。
 
-​       在html页面中提供 form 注册学生， 提供文本框输入id，进行查询。
+​ 在html页面中提供 form 注册学生， 提供文本框输入id，进行查询。
 
-​      注册和查询都使用ajax技术。
+​ 注册和查询都使用ajax技术。
 
-
-
-​    html，jquery.js都放到resources/static目录中
-
- 
-
-
-
-
+​ html，jquery.js都放到resources/static目录中
 
 # 第八章  打包
 
@@ -1523,7 +1279,7 @@ CREATE TABLE `student` (
 
 2.修改pom.xml
 
- 1)指定打包后的文件名称
+1)指定打包后的文件名称
 
 ```xml
 <build>
@@ -1531,8 +1287,6 @@ CREATE TABLE `student` (
    <finalName>myboot</finalName>
 </build>
 ```
-
-
 
 2)指定jsp编译目录
 
@@ -1565,16 +1319,12 @@ CREATE TABLE `student` (
 </resources>
 ```
 
-
-
 3）执行打包是war
 
 ```xml
 <!--打包类型-->
 <packaging>war</packaging>
 ```
-
-
 
 4）主启动类继承SpringBootServletInitializer
 
@@ -1596,15 +1346,9 @@ public class JspApplication  extends SpringBootServletInitializer  {
 }
 ```
 
-
-
 5）部署war
 
- 把war放到tomcat等服务器的发布目录中。  tomcat为例， myboot.war放到tomcat/webapps目录。
-
-
-
-
+把war放到tomcat等服务器的发布目录中。 tomcat为例， myboot.war放到tomcat/webapps目录。
 
 ## 8.2 打包为jar
 
@@ -1612,7 +1356,7 @@ public class JspApplication  extends SpringBootServletInitializer  {
 
 2.修改pom.xml
 
-​     1) 指定打包后的文件名称
+​ 1) 指定打包后的文件名称
 
 ```xml
 <build>
@@ -1621,9 +1365,7 @@ public class JspApplication  extends SpringBootServletInitializer  {
 </build>
 ```
 
-
-
-  2) 指定springboot-maven-plugin版本
+2) 指定springboot-maven-plugin版本
 
 ```xml
 <plugins>
@@ -1636,44 +1378,32 @@ public class JspApplication  extends SpringBootServletInitializer  {
 </plugins>
 ```
 
-
-
 3）最后执行 maven clean package
 
-​       在target目录中，生成jar 文件， 例子是myboot.jar
+​ 在target目录中，生成jar 文件， 例子是myboot.jar
 
-
-
-​       执行独立的springboot项目  在cmd中 java  -jar  myboot.jar
-
-
-
-
+​ 执行独立的springboot项目 在cmd中 java -jar myboot.jar
 
 # 第九章 Thymeleaf 模板引擎
 
 Thymeleaf： 是使用java开发的模板技术， 在服务器端运行。 把处理后的数据发送给浏览器。
 
-​         模板是作视图层工作的。  显示数据的。  Thymeleaf是基于Html语言。 Thymleaf语法是应用在
+​ 模板是作视图层工作的。 显示数据的。 Thymeleaf是基于Html语言。 Thymleaf语法是应用在
 
-​        html标签中 。 SpringBoot框架集成Thymealeaf,  使用Thymeleaf代替jsp。
-
-
+​ html标签中 。 SpringBoot框架集成Thymealeaf, 使用Thymeleaf代替jsp。
 
 Thymeleaf 的官方网站：http://www.thymeleaf.org
 Thymeleaf 官方手册：https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html
 
-
-
 ## 9.1 表达式
 
-1. 标准变量表达式 
+1. 标准变量表达式
 
-   **语法：**  ${key} 
+   **语法：**  ${key}
 
-   作用： 获取key对于的文本数据，  key 是request作用域中的key ， 使用request.setAttribute(), model.addAttribute()
+   作用： 获取key对于的文本数据， key 是request作用域中的key ， 使用request.setAttribute(), model.addAttribute()
 
-   在页面中的 html标签中， 使用 th:text="${key}" 
+   在页面中的 html标签中， 使用 th:text="${key}"
 
 ```html
 <div style="margin-left: 400px">
@@ -1706,7 +1436,7 @@ Thymeleaf 官方手册：https://www.thymeleaf.org/doc/tutorials/3.0/usingthymel
        <p th:text="*{age}"></p>
    </div>
    ```
-   
+
 3. 链接表达式
 
    **语法：** @{url}
@@ -1725,7 +1455,7 @@ Thymeleaf 官方手册：https://www.thymeleaf.org/doc/tutorials/3.0/usingthymel
 
 ## 9.2  Thymeleaf属性
 
-属性是放在html元素中的，就是html元素的属性，加入了th前缀。  属性的作用不变。    加入上th， 属性的值由模板引擎处理了。  在属性可以使用变量表达式
+属性是放在html元素中的，就是html元素的属性，加入了th前缀。 属性的作用不变。 加入上th， 属性的值由模板引擎处理了。 在属性可以使用变量表达式
 
 例如：
 
@@ -1836,7 +1566,7 @@ public String test4EachMap(Model model) {
 
 ```
 
-还有一个 th:unless  和 th:if相反的行为
+还有一个 th:unless 和 th:if相反的行为
 
 ```xml
 语法：
@@ -1870,10 +1600,6 @@ public String test4EachMap(Model model) {
  </div>
 ```
 
-
-
-
-
 ## 9.5  th:switch
 
 th:switch 和 java中的swith一样的
@@ -1895,15 +1621,11 @@ th:switch 和 java中的swith一样的
 </div>
 ```
 
-
-
-
-
 ## 9.6 th:inline
 
-1. 内联text：  在html标签外，获取表达式的值
+1. 内联text： 在html标签外，获取表达式的值
 
-   语法： 
+   语法：
 
    ```xml
    <p>显示姓名是：[[${key}]]</p>
@@ -1922,7 +1644,6 @@ th:switch 和 java中的swith一样的
    </div>
    ```
 
-   
 
 2. 内联javascript
 
@@ -1939,8 +1660,6 @@ th:switch 和 java中的swith一样的
         }
     </script>
 ```
-
-
 
 ## 9.7  字面量
 
@@ -1962,13 +1681,11 @@ th:switch 和 java中的swith一样的
     </div>
 ```
 
-
-
 ## 9.8  字符串连接
 
 连接字符串有两种语法
 
-1） 语法使用 单引号括起来字符串  ， 使用 + 连接其他的 字符串或者表达式
+1） 语法使用 单引号括起来字符串 ， 使用 + 连接其他的 字符串或者表达式
 
 ```html
   <p th:text="'我是'+${name}+',我所在的城市'+${city}">数据显示</p>
@@ -1982,8 +1699,6 @@ th:switch 和 java中的swith一样的
 </p>
 ```
 
-
-
 例子：
 
 ```html
@@ -1996,8 +1711,6 @@ th:switch 和 java中的swith一样的
         <p th:text="|我是${name},所在城市${city},其他人${myuser.name}|"></p>
     </div>
 ```
-
-
 
 ## 9.9 运算符
 
@@ -2027,13 +1740,9 @@ th:switch 和 java中的swith一样的
 
 ```
 
-
-
 ## 9.10 内置对象
 
 文档地址：https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#web-context-namespaces-for-requestsession-attributes-etc.
-
-
 
 #request 表示 HttpServletRequest
 
@@ -2041,7 +1750,7 @@ th:switch 和 java中的swith一样的
 
 session 表示Map对象的， 是#session的简单表示方式， 用来获取session中指定的key的值
 
-​               #session.getAttribute("loginname") == session.loginname
+​ #session.getAttribute("loginname") == session.loginname
 
 这些是内置对象，可以在模板文件中直接使用。
 
@@ -2066,11 +1775,7 @@ session 表示Map对象的， 是#session的简单表示方式， 用来获取se
 </div>
 ```
 
-
-
-
-
-##  9.11 内置工具类
+## 9.11 内置工具类
 
 内置工具类型： Thymeleaf自己的一些类，提供对string， date ，集合的一些处理方法
 
@@ -2120,8 +1825,6 @@ session 表示Map对象的， 是#session的简单表示方式， 用来获取se
   </div>
 ```
 
-
-
 ## 9.12 自定义模板
 
 模板是内容复用， 定义一次，在其他的模板文件中多次使用。
@@ -2131,8 +1834,6 @@ session 表示Map对象的， 是#session的简单表示方式， 用来获取se
 1.定义模板
 
 2.使用模板
-
-
 
 模板定义语法：
 
@@ -2150,8 +1851,6 @@ th:fragment="模板自定义名称"
 </div>
 ```
 
-
-
 引用模板语法：
 
 ```html
@@ -2165,13 +1864,11 @@ th:fragment="模板自定义名称"
 对于使用模板：有包含模板（th:include）， 插入模板(th:insert)
 ```
 
-
-
 # 第十章 总结
 
 ## 10.1 注解
 
-Spring + SpringMVC + SpringBoot 
+Spring + SpringMVC + SpringBoot
 
 ```java
 创建对象的：

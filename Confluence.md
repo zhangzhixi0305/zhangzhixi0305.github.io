@@ -2,11 +2,11 @@
 
 参考链接地址：https://blog.csdn.net/qq_52716296/article/details/127284680
 
-​							https://www.cnblogs.com/ilanni/p/6204722.html
+​                            https://www.cnblogs.com/ilanni/p/6204722.html
 
 ### 一、什么是Confluence
 
-​	Confluence是一个专业的wiki程序。它是一个知识管理的工具，通过它可以实现团队成员之间的协作和知识共享。Confluence不是一个开源软件，非商业用途可以免费使用。
+​ Confluence是一个专业的wiki程序。它是一个知识管理的工具，通过它可以实现团队成员之间的协作和知识共享。Confluence不是一个开源软件，非商业用途可以免费使用。
 Confluence使用简单，但它强大的编辑和站点管理特征能够帮助团队成员之间共享信息，文档协作，集体讨论。
 confluence是一个专业的企业知识管理与协同软件，可以用于构建企业wiki。通过它可以实现团队成员之间的协作和知识共享
 
@@ -42,13 +42,14 @@ yum makecache
 
 #### Java环境安装
 
-​	略，安装1.7+版本即可，https://www.cnblogs.com/zhangzhixi/p/14399602.html#_label0_1
+​ 略，安装1.7+版本即可，https://www.cnblogs.com/zhangzhixi/p/14399602.html#_label0_1
 
 #### MySQL环境安装
 
-​	注意：**不能将MySQL 8.0与Confluence 7.1或更早版本一起使用**，参考：https://confluence.atlassian.com/doc/database-setup-for-mysql-128747.html
+​ 注意：**不能将MySQL 8.0与Confluence 7.1或更早版本一起使用**
+，参考：https://confluence.atlassian.com/doc/database-setup-for-mysql-128747.html
 
-​	MySQL5.7安装教程：https://www.cnblogs.com/zhangzhixi/p/14961507.html
+​ MySQL5.7安装教程：https://www.cnblogs.com/zhangzhixi/p/14961507.html
 
 > 创建数据库（等下安装Confluence需要用到这个库）
 
@@ -93,9 +94,9 @@ unzip confluence5.6.6-crack.zip
 
 ![image-20230313150900510](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202303131509774.png)
 
-安装目录: /opt/atlassian/confluence 
-主目录: /var/atlassian/application-data/confluence 
-HTTP端口: 8090 
+安装目录: /opt/atlassian/confluence
+主目录: /var/atlassian/application-data/confluence
+HTTP端口: 8090
 
 ---
 
@@ -121,7 +122,8 @@ service  confluence stop
 rm -fr /opt/atlassian/confluence/confluence/WEB-INF/lib/atlassian-extras-*
 ```
 
-> 3、导入破解包里面的jar包到上述的lib目录解压破解包，把里面的atlassian-extras-3.2.jar、Confluence-5.6.6-language-pack-zh_CN.jar、mysql-connector-java-5.1.39-bin.jar三个jar文件复制到/opt/atlassian/confluence/confluence/WEB-INF/lib目录下
+>
+3、导入破解包里面的jar包到上述的lib目录解压破解包，把里面的atlassian-extras-3.2.jar、Confluence-5.6.6-language-pack-zh_CN.jar、mysql-connector-java-5.1.39-bin.jar三个jar文件复制到/opt/atlassian/confluence/confluence/WEB-INF/lib目录下
 
 ```shell
 cp /usr/local/confluence/confluence5.6.6-crack/jar/* /opt/atlassian/confluence/confluence/WEB-INF/lib/
@@ -167,8 +169,6 @@ service  confluence start
 
 ![image-20230313153716252](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202303131537309.png)
 
-
-
 #### Confluence关闭与启动命令
 
 ```shell
@@ -176,8 +176,6 @@ service  confluence stop
 service  confluence start
 service  confluence restart
 ```
-
-
 
 ### Confluence的卸载
 

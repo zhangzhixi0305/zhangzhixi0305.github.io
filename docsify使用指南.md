@@ -59,35 +59,46 @@ docsify serve --port=80
 ```
 
 ![image-20211010124211458](images/image-20211010124211458.png)
-> Linux下后台启动docsify 
+> Linux下后台启动docsify
 
 在Linux下如果使用下面的命令启动docsify，会发现一旦关闭了xShell，那么就访问不了了，具体问题还不清楚，下面说种可以在后台运行的方法；
+
 ```shell
 nohup docsify serve /usr/local/docsify/zhangzhixi0305.github.io/ --port=80 > /dev/null 2>&1 &
 ```
+
 通过编写shell脚本，将上面代码放到脚本里面，再启动就可以了；    
 1、创建脚本：vim start_docsify.sh
+
 ```shell
 #! bin/bash
 nohup docsify serve /usr/local/docsify/zhangzhixi0305.github.io/ --port=80 > /dev/null 2>&1 &
 ```
-2、启动脚本  
+
+2、启动脚本
+
 ```shell
 bash start_docsify.sh
 ```
+
+## 关于网站启动后，加载缓慢的问题
+
+> 这是因为样式引用的CDN地址被墙了，所以加载缓慢，解决办法是将样式下载到本地，然后引用本地的样式，这样就不会加载缓慢了；
+
+> 已经在：[index.html](index.html) 中添加了本地资源引用；
 
 ## 基础配置文件介绍
 
 > 其实我们维护一份轻量级的个人&团队文档我们只需要配置以下这几个基本文件就可以了。
 
-|        文件作用        |     文件      |
-| :--------------------: | :-----------: |
+|    文件作用     |      文件       |
+|:-----------:|:-------------:|
 | 基础配置项（入口文件） |  index.html   |
-|      封面配置文件      | _coverpage.md |
-|     侧边栏配置文件     |  _sidebar.md  |
-|     导航栏配置文件     |  _navbar.md   |
-|    主页内容渲染文件    |   README.md   |
-|       浏览器图标       |  favicon.ico  |
+|   封面配置文件    | _coverpage.md |
+|   侧边栏配置文件   |  _sidebar.md  |
+|   导航栏配置文件   |  _navbar.md   |
+|  主页内容渲染文件   |   README.md   |
+|    浏览器图标    |  favicon.ico  |
 
 ## 基础配置项（index.html）
 
