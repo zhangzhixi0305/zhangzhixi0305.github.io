@@ -1,7 +1,7 @@
 [//]: # (侧边栏)
 
 * Typora+docsify使用指南
-    * [🍓docsify-使用指南](doc/docsify使用指南)
+    * [🍓docsify-使用指南](doc/docsify使用指南.md)
     * [🫐Typora+docsify快速入门](doc/Typora+Docsify快速入门.md)
     * [🥑docsify部署教程](doc/Docsify部署教程.md)
 * Confluence教程

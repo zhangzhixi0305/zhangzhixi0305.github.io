@@ -1,7 +1,7 @@
 [//]: # (文档首页)
 
 # **首页**
-##### docsify安装手册：[🍓docsify-使用指南](doc/docsify使用指南)
+##### docsify安装手册：[🍓docsify-使用指南](doc/docsify使用指南.md)
 ##### emoji表情网址：https://emojipedia.org/
 
 🍇 Grapes        
