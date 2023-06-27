@@ -2,17 +2,17 @@
 
 ### VPN 是什么？
 
-　　看到 VPN 第一反应应该是翻墙，但 VPN 最初应该也是最普遍的用途应该是用来做内网打通， 这也是其名字虚拟私有网络的用意，VPN 让你可以在公开的网络线路上建立一个私有的子网， 然后将所有接入的机器都分配一个私有的内网地址，让他们可以通过 VPN 的私有网络互联。
+看到 VPN 第一反应应该是翻墙，但 VPN 最初应该也是最普遍的用途应该是用来做内网打通， 这也是其名字虚拟私有网络的用意，VPN 让你可以在公开的网络线路上建立一个私有的子网， 然后将所有接入的机器都分配一个私有的内网地址，让他们可以通过 VPN 的私有网络互联。
 
 ### TailScale 是什么
 
-　　云上VPN服务商，提供VPN的一种：mesh VPN；一种能让节点间直接互联，每一个节点都会存储其他所有节点的信息，并且和其他所有的节点都建立 TLS加密连接。
+云上VPN服务商，提供VPN的一种：mesh VPN；一种能让节点间直接互联，每一个节点都会存储其他所有节点的信息，并且和其他所有的节点都建立 TLS加密连接。
 
 对个人用户免费，支持100设备；
 
 > TailScale 能做到什么
 
-　　只要你的机器可以连到公网，tailscale 可以让所有的机器连接到同一个私有子网内。 你可以像在同一个局域网里那样，随时随地的连接你的任意设备，场景：文件传输、远程开发、代理
+只要你的机器可以连到公网，tailscale 可以让所有的机器连接到同一个私有子网内。 你可以像在同一个局域网里那样，随时随地的连接你的任意设备，场景：文件传输、远程开发、代理
 
 ## 二、使用
 
@@ -24,9 +24,9 @@ tailscale管理端：https://login.tailscale.com/admin/machines
 
 ### 1、注册
 
-![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230619154240448-2086642219.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271029330.png)
 
- 登陆后进入添加设备页面，左边是提供添加设备方法，右边是你添加成功后会出现你的设备清单
+登陆后进入添加设备页面，左边是提供添加设备方法，右边是你添加成功后会出现你的设备清单
 
 ###  2、下载安装
 
@@ -34,25 +34,25 @@ tailscale管理端：https://login.tailscale.com/admin/machines
 
 官网给出了包含五种设备的安装以及连接方法，下面我就演示常用的三种：本机Windows、逍遥模拟器（Android）、Linux（阿里云）
 
-![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230619154500535-1797140364.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271029428.png)
 
 ### 3、 Windows
 
 下载安装包进行安装即可。
 
-![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230619154655184-642553814.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271029300.png)
 
 在电脑任务管理器会有tailscale的图标，点击登录即可，然后就可以看到你的这个主机了。
 
-![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230619154750308-291613839.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271029061.png)
 
 进入管理界面：然后设置主机名，以及禁止秘钥过期：
 
-![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230619155201975-942053275.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271029351.png)
 
 **禁用DNS**
 
-![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230626171527591-2028400983.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271029894.png)
 
 ### 4、Linux
 
@@ -64,13 +64,13 @@ curl -fsSL https://tailscale.com/install.sh | sh
 
 ------
 
- ![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230619155444917-2037924841.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271029375.png)
 
 > **设置DNS(***)：这步已经通过前面的设置DNS进行处理了，此处不再设置**
 
 先说问题：
 
-　　在Linux下启动tailscale，不能ping通外网，将默认将系统dns文件：/etc/resolv.conf进行替换了。然后关闭tailscale，dns配置又恢复之前的样子了；
+在Linux下启动tailscale，不能ping通外网，将默认将系统dns文件：/etc/resolv.conf进行替换了。然后关闭tailscale，dns配置又恢复之前的样子了；
 
 如果是这样的话，我开启了tailscale后，我不能够访问外网，这软件是有点耦合性太高了~
 
@@ -85,7 +85,7 @@ $ sudo systemctl restart NetworkManager
 $ sudo systemctl restart tailscaled
 ```
 
-![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230626170443119-1437583868.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271030682.png)
 
 > tailscale帮助命令
 
@@ -135,17 +135,17 @@ systemctl disable tailscaled # 禁用开机自启
 
 蓝奏云：
 
-　　https://wwxo.lanzouj.com/iXQTm0zixwpe
+https://wwxo.lanzouj.com/iXQTm0zixwpe
 
-　　密码:dipu
+密码:dipu
 
 ------
 
- 
+
 
 软件安装完后，打开，也是通过微软账户进行登录，即可加入到网络：
 
-![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230619162051666-765764026.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271030134.png)
 
 ### 6、测试
 
@@ -157,15 +157,15 @@ systemctl disable tailscaled # 禁用开机自启
 
 异地组网访问地址：http://100.103.222.102:8080/user/selectAll/1/4
 
-![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230619163348969-2053974731.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271030119.png)
 
 ## 三、Nginx整合Tailscale做端口转发
 
 > 使用场景：使本地应用能被通过公网IP地址进行访问
 
-　　看以下图示，通过云服务器的公网IP，用户访问这个IP，通过Nginx转发，使用户访问到本地内网的应用，前提是需要**有云服务器和公网IP**
+看以下图示，通过云服务器的公网IP，用户访问这个IP，通过Nginx转发，使用户访问到本地内网的应用，前提是需要**有云服务器和公网IP**
 
-![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230627095011211-2107219368.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271030618.png)
 
 > 操作步骤
 
@@ -190,4 +190,4 @@ server {
 }
 ```
 
-![img](https://img2023.cnblogs.com/blog/2126720/202306/2126720-20230627100022215-1055415330.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202306271030786.png)
