@@ -18,7 +18,7 @@ Zabbix支持轮询和被动捕获。基于Web的前端页面确保您的网络�
 
 ### 1.2、Zabbix基础架构
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230704163946786-121367400.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061822893.png)
 
 核心组件主要是**Agent**和**Server**，其中Agent主要负责采集数据并通过主动或者被动的方式采集数据发送到Server/Proxy，除此之外，为了扩展监控项，Agent还支持执行自定义脚本。、
 
@@ -32,7 +32,7 @@ Zabbix Database支持常用的关系型数据库，如果MySQL、PostgreSQL、Or
 
 关于Prometheus资料，可以看我的另外一篇博客：https://www.cnblogs.com/zhangzhixi/p/17387191.html
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230704164212206-2103239086.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061825776.png)
 
 综合对比：
 
@@ -79,7 +79,7 @@ Prometheus准没错
 
 因为还需要使用到MySQL做持久化，我这里使用的MySQL版本是8.0.18，安装步骤参考：https://www.cnblogs.com/zhangzhixi/p/15849992.html
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230704165633740-1846966492.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826888.png)
 
 ### 2.2、环境搭建
 
@@ -252,23 +252,23 @@ systemctl disable zabbix-agent
 
 访问地址：http://100.127.184.112:8060/zabbix
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230704174023076-1245947461.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826179.png)
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230704174035229-1885612673.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826849.png)
 
 配置数据库连接信息(也就是在2.3.3中设置的)
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230704174101568-2086526986.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826339.png)
 
 然后一直Next，直到登录界面
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230704174155354-1365212882.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826037.png)
 
 登录Zabbix，默认用户名：**Admin** 密码：**zabbix**
 
 修改语言为中文：
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230704174304544-318390826.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826624.png)
 
 ## 三、Zabbix使用
 
@@ -287,61 +287,61 @@ systemctl disable zabbix-agent
 
 #### 3.2.1、创建及配置主机（Host）
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705121757944-1008513508.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826044.png)
 
 #### 3.2.2、创建监控项（Item）
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705170128168-46177549.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826228.png)
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705170300329-1075488344.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826151.png)
 
 **查看添加的监控项数据**
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705170412352-1473078129.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826011.png)
 
 ####  3.2.3：创建触发器（Trigger）
 
 配置-->主机-->触发器
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705170717910-392801796.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826811.png)
 
 编辑触发器
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705171152199-1425521694.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826017.png)
 
 查看创建的触发器
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705171214322-1774439927.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826017.png)
 
 #### 3.2.4：创建动作（Action）
 
 配置-->动作-->创建动作
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705171644468-1799688587.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826898.png)
 
 查看创建的动作
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705171837207-374122341.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826671.png)
 
 #### 3.2.5：配置邮箱
 
 QQ邮箱授权码获取：
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705172135415-956473859.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826856.png)
 
 管理-->报警媒介类型-->Email
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705172043717-151605979.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826496.png)
 
 测试Email发送
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705174530062-466804302.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826900.png)
 
 #### 3.2.6：配置事件触发器邮件发送收件人
 
 管理-->用户-->报警媒介
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705175223734-1861334762.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826922.png)
 
 #### 3.2.7：测试
 
@@ -353,11 +353,11 @@ QQ邮箱授权码获取：
 
  **服务器内连接数大于295，触发了邮件告警，并在首页显示**
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705175856131-1803419532.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061826044.png)
 
 Zabbix内展示
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705175804288-1587183731.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827698.png)
 
 对于首页仪表盘的问题，我们想让它消失通常是
 
@@ -369,7 +369,7 @@ Zabbix内展示
 
 4、如果直接关闭了问题，等下一次，也就是5s后，那么就会继续发送邮件（没解决问题）
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230705180407125-1671959676.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827010.png)
 
 ### 3.3、Zabbix模板
 
@@ -389,41 +389,41 @@ Zabbix内展示
 
 这里的群组是开始演示的那三台主机，将它们设置为了一个群组。
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706111433056-416576364.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827510.png)
 
 > 2、创建监控项
 
 这里我们来点不一样的，前面的例子是，服务器内连接数大于295，就触发告警，这里演示一个其他的：**这三台服务器中Tomcat进程数小于1，就触发告警**
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706111749847-1168441880.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827878.png)
 
 添加Tomcat监控
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706112730000-825017514.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827529.png)
 
 > 3、配置触发器
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706112929337-162379425.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827745.png)
 
 点击触发器后，同样的，在右上角点击创建触发器
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706113221867-2129316699.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827244.png)
 
 > 3、配置动作（发送邮件的动作）
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706113605220-649356464.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827546.png)
 
 更新后的动作界面
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706113629222-1641982518.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827786.png)
 
 > 4、为主机应用模板
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706114002005-211901766.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827214.png)
 
 同理，这三台主机都要添加，添加后的效果如下
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706114120295-56873122.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827665.png)
 
 >  5、测试
 
@@ -431,15 +431,15 @@ Zabbix内展示
 
 **100.127.184.112：**
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706114505833-1108155948.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827535.png)
 
 **100.99.171.50：** 
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706114628089-376706841.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827447.png)
 
 **100.87.7.20：**
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706114750150-101522713.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827849.png)
 
 测试完成后，可以通过：配置-->动作-->移除触发器/停用该动作。
 
@@ -485,13 +485,13 @@ echo "/usr/local/grafana/grafana-8.1.2/start_grafana.sh"  >> /etc/rc.d/rc.local
 
 > 1、配置数据源
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706150739142-1168447221.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827005.png)
 
 因为Grafana默认没有集成Zabbix数据源，所以需要安装插件。
 
 **这里需要注意的是**，一定要选择合适的版本，如下图，我们这里安装的Grafana版本是：8.1.2，支持的最高Zabbix插件版本是：4.2.6
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706153954258-1944932551.png)![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706153917524-1493598195.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827401.png)![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706153917524-1493598195.png)
 
 还需要注意的是，这里有两种安装方式，一种是通过命令安装，一种是通过下载插件，手动放在plugins目录下：
 
@@ -512,25 +512,25 @@ cd /usr/local/grafana/grafana-8.1.2/bin
 
 　　下载插件，然后放到：/usr/local/grafana/grafana-8.1.2/data/plugins，下然后重启Grafana即可
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706154853677-640721507.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827977.png)
 
 
 
 > 2、启用插件
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706160319350-1106565987.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827849.png)
 
 > 3、配置数据源
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706161016383-445107381.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827026.png)
 
 > 4、添加Grafana展示面板
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706162725775-1604496038.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827638.png)
 
  展示数据结果如下所示：
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706162617861-567235572.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827035.png)
 
 ##  五、Zabbix整合睿象云告警平台
 
@@ -538,9 +538,9 @@ cd /usr/local/grafana/grafana-8.1.2/bin
 
 集成Zabbix
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706170218079-341784309.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827059.png)
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706172522170-1720469133.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827388.png)
 
 > 1、查看Zabbix脚本目录
 
@@ -550,7 +550,7 @@ vim /etc/zabbix/zabbix_server.conf
 
 搜索：AlertScriptsPath
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706172641051-1007560840.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061827574.png)
 
 进入脚本目录：
 
@@ -576,36 +576,36 @@ Zabbix管理地址：你自己的Zabbix访问地址
 
 默认用户名密码是：Admin zabbix
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706173453608-1622407434.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061828588.png)
 
 成功安装：
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706173649630-1672099254.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061828395.png)
 
 这里就是我们安装完成睿象云后，自动生成的报警方式了
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706180308466-1717234979.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061828755.png)
 
 > 4、分派策略：告警信息发送给谁
 
 如果Zabbix触发告警了，这时候就需要让睿象云来做告警了。
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706174336483-682386785.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061828139.png)
 
 > 5、通知策略
 
 简单来说就是什么错误级别，还有消息的发送方式等的设置
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706175441093-1681297997.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061828587.png)
 
 > 6、测试
 
 现在测试关闭一台Tomcat，看下Zabbix和Grafana界面的消息
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706175901620-535364193.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061828689.png)
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706181405214-1803779315.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061828984.png)
 
  短信和邮件
 
-![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706175814849-1332833292.png)![img](https://img2023.cnblogs.com/blog/2126720/202307/2126720-20230706181123400-69402553.png)
+![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061828882.png)![img](https://typora-picgo-images-zhixi.oss-cn-beijing.aliyuncs.com/202307061828489.png)
