@@ -12,3 +12,5 @@
   * [🍔RibbitMQ实战教程](doc/RibbitMQ实战教程.md)
 * 好用工具
   * [🌍异地组网-TailScale](doc/TailScale.md)
+* 监控软件
+  * [Zabbix.md](doc/Zabbix.md)
