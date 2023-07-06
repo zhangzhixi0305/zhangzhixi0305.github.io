@@ -2,7 +2,7 @@
 
 Zabbix中文文档：https://www.zabbix.com/documentation/current/zh
 
-资料地址：
+资料地址：https://pan.baidu.com/s/183UmRgq2TKMRmXSaTjT3YA?pwd=8023
 
 ## 一、Zabbix入门
 
