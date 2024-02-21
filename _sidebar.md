@@ -15,3 +15,5 @@
 * 监控软件
   * [🛩️Prometheus&Grafana监控.md](doc/Prometheus&Grafana监控.md)
   * [🍂Zabbix.md](doc/Zabbix.md)
+* other
+  * [🍈qwq](doc/美甲-个人工作室资料参考.md)
